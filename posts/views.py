@@ -8,7 +8,7 @@ from django.shortcuts import render
 
 
 class PostListView(LoginRequiredMixin, ListView):
-	paginate_by = 10
+	paginate_by = 4
 	model = Post
 	template_name = "post_list.html"
 	login_url='login'
