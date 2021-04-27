@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}{{ block.super }} - Post Oluşturma {% endblock title %}
+{% block content %}
+	<h1>Post Oluşturma</h1>
+	<form action="" method="post">{% csrf_token %}
+		{{form|crispy}}
+		{{ form.media }}
+		<button class="btn btn-success ml-2" type="submit">Kaydet</button>
+	</form>
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}{{ block.super }} - Hata {% endblock title %}
+{% block content %}
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+</style>
+<div class="alert alert-danger d-flex">
+  <strong>Hata! </strong> Bu Postu sadece oluşturan kişi düzenliyebilir veya silebilir.<a class = "ml-auto p2" href="{% url 'post_list' %}";>Kapat</a>         
+</div>
+</html>
+</head>
+{% endblock content %}

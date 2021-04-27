@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron">
+	<h1 class="display-3">Projenin Konusu</h1>
+	<p class="lead">Üye olunabilen, üyelerin post oluşturabildiği, oluşturduğu postları düzenleyebildiği veya silebildiği bir uygulama.</p>
+	<hr class="my-4">
+	<p class="lead">
+		<a class="btn btn-warning btn-lg" href="{% url 'post_list' %}"
+		role="button">Projeye Git</a>
+	</p>
+	<p class="float-right">Canpolat Yılmaz 1498</p>
+</div>
+{% endblock content %}

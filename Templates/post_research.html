@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Posts{% endblock title %}
+{% block content %}
+	{% for post in object_list %}
+        {% if post.pk >= 5 and post.pk < 9 %}
+            <div class="card border-dark mb-3">
+                <div class="card-header text-white bg-dark">
+                    <span class="font-weight-bold"> &middot;{{ post.title }}</span>
+                </div>
+                <div class="card-body text-dark">
+                    {{ post.body|safe }}
+                    {% if post.author == user or user.is_superuser %}
+                    <a href="{% url 'post_edit' post.pk %}">Düzenle</a> |
+                    <a href="{% url 'post_delete' post.pk %}">Sil</a>
+                    {% endif %}
+                </div>
+                <div class="card-footer bg-muted">
+                    <span class="text-dark"><span class="font-weight-bold">{{ post.author }}</span> tarafından |
+                    <span class="font-weight-bold">{{ post.date }}</span> tarihinde oluşturuldu</span>
+                </div>
+            </div>
+            	<br/>
+        {% endif %}
+	{% endfor %}
+{% endblock content %}

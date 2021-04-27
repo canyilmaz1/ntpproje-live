@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}{{ block.super }} - Post Silme {% endblock title %}
+{% block content %}
+	<h1>Post Silme İşlemi </h1>
+	<form action="" method="post">{% csrf_token %}
+		<p>"{{ post.title }}" makalesini silmek istediğinizden emin misiniz?</p>
+		<button class="btn btn-danger ml-1" type="submit">Sil</button>
+		<a href="{% url 'post_list' %}" class="btn btn-warning ml-2">Vazgeç</a>
+	</form>	
+{% endblock content %}
